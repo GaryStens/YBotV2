@@ -13,6 +13,8 @@ module.exports = {
       case 'info':
         this.minecraftInfo(handler)
         break
+      case '':
+        handler.bot.core?.run('/tellraw @a ["",{"text":"YBotV2 ","color":"light_purple"},{"text":"\u25ba ","color":"dark_gray"},{"text":"Invalid arguments.","color":"gray"},{"text":"\n\n"},{"text":"Usage ","color":"red"},{"text":"- ","color":"dark_gray"},{"text":"${config.prefixes}player [list, info <player>]","color":"red"}]')
     }
   },
   minecraftList (handler) {
@@ -22,6 +24,21 @@ module.exports = {
 
     for (const [index, player] of Object.entries(players)) {
       const color = index % 2 ? 'green' : 'dark_green'
+      
+      json.push({
+        text: 'YBotV2 ',
+        color: 'light_purple',
+      })
+      
+      json.push({
+        text: '► ',
+        color: 'dark_gray',
+      })
+      
+      json.push({
+        text: 'List of Players: ',
+        color: 'green',
+      })
 
       json.push({
         text: player.name,
@@ -60,7 +77,9 @@ module.exports = {
 
     const player = handler.bot.players.getPlayer(uuid)
 
-    if (player === undefined) throw new MissingPlayerError(`Could not find player ${uuid}`)
+    if (player === undefined) {
+      handler.bot.core?.run('/tellraw @a ["",{"text":"YBotV2 ","color":"light_purple"},{"text":"\u25ba ","color":"dark_gray"},{"text":"Player not found!","color":"red"}]')
+    }
 
     handler.sendMessage([
       {
