@@ -10,3 +10,5 @@ process.on('uncaughtException', error => {
 process.on('unhandledRejection', error => {
   console.error('[Unhandled rejection]', error)
 })
+
+console.log('Hash is: <ENTER HASH HERE>')
