@@ -58,25 +58,14 @@ function inject (bot) {
         bold: false
       },
       {
-        text: 'DISCORD',
-        color: 'blue',
-        bold: true
-      },
-      {
-        text: ']',
-        color: 'dark_gray',
-        bold: false
-      },
-      ' ',
-      {
-        text: '[',
-        color: 'dark_gray',
+        text: 'YBotV2 ',
+        color: 'light_purple',
         bold: false
       },
       {
-        text: 'YBOT',
-        color: 'yellow',
-        bold: true
+        text: 'Discord',
+        color: 'gray',
+        bold: false
       },
       {
         text: ']',
@@ -86,14 +75,14 @@ function inject (bot) {
       ' ',
       {
         text: message.author.username,
-        color: 'red',
+        color: 'light_purple',
         bold: false,
         hoverEvent: {
           action: 'show_text',
           contents: [
             {
               text: message.author.username,
-              color: 'white'
+              color: 'gray'
             },
             {
               text: '#',
@@ -111,13 +100,13 @@ function inject (bot) {
         }
       },
       {
-        text: ': ',
-        color: 'white',
+        text: ' ► ',
+        color: 'dark_gray',
         bold: false
       },
       {
         text: message.content,
-        color: 'white',
+        color: 'light_purple',
         bold: false
       }
     ]
