@@ -38,7 +38,7 @@ function inject (bot) {
         })
       },
       fillCore () {
-        bot.chat(`/fill ${core.start.x} ${core.start.y} ${core.start.z} ${core.end.x} ${core.end.y} ${core.end.z} command_block`)
+        bot.chat(`/fill ${core.start.x} ${core.start.y} ${core.start.z} ${core.end.x} ${core.end.y} ${core.end.z} minecraft:repeating_command_block destroy`)
 
         bot.emit('core_filled')
       }
