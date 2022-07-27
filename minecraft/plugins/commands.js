@@ -21,13 +21,13 @@ function inject (bot) {
       const command = bot.commands.find(command => command.name === commandName)
 
       if (command === undefined) {
-        handler.sendError(new UnknownCommandError(`Unknown command: ${commandName}`))
+        bot.core?.run(`/tellraw @a ["",{"text":"YBotV2 ","color":"light_purple"},{"text":"\u25ba ","color":"dark_gray"},{"text":"${commandName} ","color":"dark_purple"},{"text":"dosen't exist!","color":"red"}]`)
 
         return
       }
 
       if (command.minecraft === undefined) {
-        handler.sendError(new UnsupportedCommandError(`${commandName} is not supported`))
+        bot.core?.run(`/tellraw @a ["",{"text":"YBotV2 ","color":"light_purple"},{"text":"\u25ba ","color":"dark_gray"},{"text":"${commandName} is only available in discord!","color":"red"}]`)
 
         return
       }
