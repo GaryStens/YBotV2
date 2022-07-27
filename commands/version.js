@@ -32,6 +32,6 @@ module.exports = {
         text: lastUpdate.stdout,
         color: 'blue'
       }
-    ])
+    ], '@a')
   }
 }
