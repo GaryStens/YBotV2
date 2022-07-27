@@ -1,5 +1,5 @@
 module.exports = {
-  name: 'run',
+  name: 'cb',
   minecraft (handler) {
     const command = handler.args.join(' ')
 
