@@ -6,6 +6,8 @@ module.exports = {
   name: 'urldraw',
   async minecraft (handler) {
     const url = handler.args.join(' ').replaceAll(/§r/g, '')
+    const a = handler.args[0]
+    const empty = handler.args[0]
 
     const image = await axios.get('https://http-proxy.dinhero21.repl.co', {
       params: {
@@ -13,6 +15,12 @@ module.exports = {
       },
       responseType: 'arraybuffer'
     })
+    
+    switch (a) {
+      case empty:
+        handler.bot.core?.run('/tellraw @a ["",{"text":"YBotV2 ","color":"light_purple"},{"text":"\u25ba ","color":"dark_gray"},{"text":"Please provide a url.","color":"gray"}]')
+        break
+    }
 
     const loaded = sharp(image.data)
 
