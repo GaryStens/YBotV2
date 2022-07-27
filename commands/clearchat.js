@@ -6,9 +6,19 @@ module.exports = {
         text: '\n'.repeat(100)
       },
       {
-        text: 'Chat has been cleared',
-        color: 'green',
-        bold: true
+        text: 'YBot ',
+        color: 'light_purple',
+        bold: false
+      },
+      {
+        text: '► ',
+        color: 'dark_gray',
+        bold: false
+      },
+      {
+        text: 'Successfully cleared the chat!',
+        color: 'aqua',
+        bold: false
       }
     ], '@a')
   }
