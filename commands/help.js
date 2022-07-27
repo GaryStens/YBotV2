@@ -7,8 +7,8 @@ module.exports = {
 
     for (const command of handler.bot.commands) {
       message.push({
-        text: command.name,
-        color: this.color(command),
+        text: config.prefixes + '' + command.name,
+        color: 'light_purple',
         hoverEvent: {
           action: 'show_text',
           contents: [
@@ -35,7 +35,7 @@ module.exports = {
             },
             {
               text: command.minecraft ? 'yes' : 'no',
-              color: command.minecraft ? 'green' : 'red'
+              color: command.minecraft ? 'light_purple' : 'dark_purple'
             }
           ]
         }
@@ -46,7 +46,8 @@ module.exports = {
 
     message.pop()
 
-    handler.sendMessage(message, '@a')
+    setTimeout(() => handler.sendMessage(message, '@a'), 100)
+    setTimeout(() => handler.bot.core?.run('/tellraw @a ["",{"text":"YBotV2 ","color":"light_purple"},{"text":"\u25ba ","color":"dark_gray"},{"text":"Hover ","color":"light_purple"},{"text":"your mouse in order to show information (if it's supported or not)","color":"gray"}]'), 200)
   },
   discord (handler) {
     const embed = new EmbedBuilder()
